@@ -1,0 +1,61 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Clean Launcher</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; background:#0e1116; color:#e8ecf1; font:28px sans-serif; overflow:hidden; }
+  header { display:flex; justify-content:space-between; padding:40px 80px 0; }
+  h1 { margin:0; font-weight:300; font-size:44px; }
+  #clock { font-size:36px; opacity:.7; }
+  #grid { display:grid; grid-template-columns:repeat(5,1fr); gap:32px; padding:48px 80px; }
+  .tile { background:#1b212b; border-radius:20px; height:200px; display:flex; flex-direction:column;
+          align-items:center; justify-content:center; gap:16px; outline:none; transition:transform .15s; }
+  .tile img { width:96px; height:96px; object-fit:contain; }
+  .tile:focus { transform:scale(1.08); background:#2a3342; box-shadow:0 0 0 4px #5aa2ff; }
+  .tile span { max-width:90%; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+</style></head>
+<body>
+<header><h1>Home</h1><div id="clock"></div></header>
+<div id="grid"></div>
+<script>
+// Ad-free launcher: lists installed apps from the system, no promotions or recommendations.
+var HIDE = /^(com\.webos\.app\.(discovery|home|livemenu|notificationcenter|tvhotkey)|com\.webos\.app\.(lgworld|livezoom))/;
+var PIN = ["youtube.leanback.v4","netflix","amazon","com.webos.app.hdmi1","com.webos.app.hdmi2","com.webos.app.livetv"];
+
+function call(uri, params, ok) {
+  var b = new PalmServiceBridge();
+  b.onservicecallback = function (m) { ok(JSON.parse(m)); };
+  b.call(uri, JSON.stringify(params));
+}
+function launch(id) { call("luna://com.webos.applicationManager/launch", {id: id}, function(){}); }
+
+function render(points) {
+  points = points.filter(function (p) { return !HIDE.test(p.id); });
+  points.sort(function (a, b) {
+    var ia = PIN.indexOf(a.id), ib = PIN.indexOf(b.id);
+    if (ia < 0 && ib < 0) return a.title.localeCompare(b.title);
+    return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+  });
+  var grid = document.getElementById("grid");
+  points.forEach(function (p) {
+    var t = document.createElement("div");
+    t.className = "tile"; t.tabIndex = 0;
+    t.innerHTML = '<img src="' + (p.icon || "") + '"><span></span>';
+    t.querySelector("span").textContent = p.title;
+    t.onclick = function () { launch(p.id); };
+    t.onkeydown = function (e) { if (e.keyCode === 13) launch(p.id); };
+    grid.appendChild(t);
+  });
+  grid.firstChild && grid.firstChild.focus();
+}
+
+document.addEventListener("keydown", function (e) {
+  var tiles = [].slice.call(document.querySelectorAll(".tile")), i = tiles.indexOf(document.activeElement);
+  var d = {37:-1, 39:1, 38:-5, 40:5}[e.keyCode];
+  if (d && tiles[i + d]) { tiles[i + d].focus(); e.preventDefault(); }
+});
+setInterval(function () {
+  document.getElementById("clock").textContent = new Date().toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"});
+}, 1000);
+
+call("luna://com.webos.applicationManager/listLaunchPoints", {}, function (r) { render(r.launchPoints || []); });
+</script></body></html>

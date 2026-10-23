@@ -1,0 +1,12 @@
+{
+  "id": "com.anirudha.cleanlauncher",
+  "version": "1.0.0",
+  "vendor": "anirudha",
+  "type": "web",
+  "main": "index.html",
+  "title": "Clean Launcher",
+  "icon": "icon.png",
+  "largeIcon": "icon.png",
+  "resolution": "1920x1080",
+  "disallowScrollingInMainFrame": true
+}

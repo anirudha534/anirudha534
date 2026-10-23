@@ -1,0 +1,18 @@
+# LG webOS ad / telemetry domains (community-sourced; test after enabling).
+# Pi-hole / AdGuard Home: add as a blocklist or custom denylist.
+ad.lgappstv.com
+ads.lgappstv.com
+lgad.cjpowercast.com
+in.lgad.cjpowercast.com
+ad.lgsmartad.com
+in.ad.lgsmartad.com
+us.ad.lgsmartad.com
+eu.ad.lgsmartad.com
+kr.ad.lgsmartad.com
+info.lgsmartad.com
+lgsmartad.com
+rdx2.lgtvsdp.com
+lgtvsdp.com
+tvad.lgappstv.com
+ibs.lgappstv.com
+smartshare.lgtvsdp.com

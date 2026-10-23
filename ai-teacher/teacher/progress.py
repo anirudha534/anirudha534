@@ -52,9 +52,17 @@ class Progress:
             "notes": notes,
             "last": today.isoformat(),
         }
+        self.data.get("resume", {}).pop(lesson_id, None)
         if today.isoformat() not in self.data["days"]:
             self.data["days"].append(today.isoformat())
         self.save()
+
+    def set_resume(self, lesson_id, note):
+        self.data.setdefault("resume", {})[lesson_id] = note
+        self.save()
+
+    def resume_note(self, lesson_id):
+        return self.data.get("resume", {}).get(lesson_id)
 
     def due(self, today=None):
         today = (today or date.today()).isoformat()

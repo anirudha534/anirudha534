@@ -13,6 +13,29 @@ A terminal tutor that walks you through all 24 weeks (306 checklist items) of
 - **Resumes** any unfinished lesson exactly where you stopped.
 - **Language:** can explain in Telugu/Hindi while keeping technical words in English.
 
+## Option A: inside Claude Desktop (no API key needed)
+
+Uses your normal Claude subscription. Claude does the teaching in a Project; a tiny local connector
+(`guru_mcp.py`) saves your progress, so every new chat knows where you are.
+
+1. `pip install "mcp<2"`  (the `<2` matters - version 2 changed its API)
+2. `python scripts/desktop_setup.py --name Anirudha`
+   It writes `desktop/PROJECT_INSTRUCTIONS.txt` and prints a block of JSON for this computer.
+3. Claude Desktop -> Settings -> Developer -> **Edit Config**. Paste/merge the JSON into
+   `claude_desktop_config.json` (if it already has `mcpServers`, add just the `"guru"` entry).
+   Fully quit Claude Desktop (system tray -> Quit) and reopen it. A "guru" connector with 8 tools should appear.
+4. Create a **Project** called "Guru". In its instructions, paste all of `desktop/PROJECT_INSTRUCTIONS.txt`.
+   (Optional: add your roadmap .docx to the project's files.)
+5. Open a chat inside the project and say "let's start". Say `simpler`, `next`, `stuck`, `recap`, `done` anytime.
+
+If Settings has no Developer section, or the connector does not appear, your work/org account may block local
+connectors. Guru still works with just the Project instructions - it will tell you progress is not being saved
+and ask which lesson you are on.
+
+Progress is stored in `~/.ai-teacher/` and is shared with the command-line version below.
+
+## Option B: command line with an API key
+
 ## Set up (5 minutes)
 
 1. Get an API key at console.anthropic.com (and set a monthly spend limit there).
@@ -49,6 +72,8 @@ Default model is `claude-sonnet-5-5` (good and cheap for teaching). For a hard t
 
 ## Status / honest notes
 
+- The connector is tested end to end over stdio (the way Claude Desktop launches it), but **not yet inside the
+  real Claude Desktop app** - the first chat is the real test.
 - Unit tests (`pytest tests`) cover the roadmap parser, spaced repetition, lesson flow, resume, and error
   handling using a fake client. **It has not been run against the live API yet** - the first real lesson is the
   real test; if anything misbehaves, tell me what you saw.

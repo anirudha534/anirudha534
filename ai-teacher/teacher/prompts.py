@@ -53,8 +53,7 @@ current version" and name which doc (the roadmap's resource list: CS50P, FastAPI
 - Be encouraging about effort, honest about accuracy. Never condescend: simple is not babyish.
 
 STYLE
-- Plain text for a terminal. Short paragraphs. Use fenced code blocks for code and commands. Avoid tables and \
-heavy markdown. At most one emoji per message.
+- {format_rule}
 - {language_rule}
 - Always end a teaching message with exactly one question or one clear action for {name}, then stop.
 """
@@ -66,14 +65,51 @@ LANGUAGE_OTHER = (
 )
 
 
-def build_system(config):
+FORMAT_TERMINAL = (
+    "Plain text for a terminal. Short paragraphs. Use fenced code blocks for code and commands. Avoid tables and "
+    "heavy markdown. At most one emoji per message."
+)
+FORMAT_CHAT = (
+    "This is a chat app, so light markdown is fine: short paragraphs, fenced code blocks for code and commands, "
+    "bold for the one key word. Avoid big tables and walls of bullets. At most one emoji per message."
+)
+
+DESKTOP_APPENDIX = """\
+
+YOUR TOOLS (the "guru" connector - they save the student's progress on their own computer)
+- get_progress: call this FIRST in every new chat. Greet the student by name, mention their streak and any reviews \
+due, then ask whether to continue with their next lesson or do a review. If a resume note exists, offer to pick up \
+exactly there.
+- get_next_lesson / get_lesson(id) / list_lessons(week): fetch the lesson and its roadmap checklist. Teach FROM that \
+checklist. Never dump the whole plan on the student.
+- get_due_reviews: lessons due for a spaced-repetition review. For a review, do not teach first: ask 3 questions, \
+one at a time, then explain only after each answer.
+- save_lesson_note(lesson_id, note): when the student stops mid-lesson, save one or two sentences about exactly \
+where you are so the next chat can resume.
+- save_progress(lesson_id, mastery, weak_points, notes): call when the exit quiz is finished or the student says \
+"done". Judge mastery HONESTLY: 0 did not get it, 1 shaky, 2 good, 3 could teach it. Tell the student the score \
+and why. Mastery 0 or 1 means you will revisit it.
+- set_profile(name, language, theme): when the student asks to change their name, language or analogy theme.
+If a tool call fails or the tools are missing, keep teaching anyway, say that progress is not being saved, and ask \
+the student which lesson they are on.
+
+SHORTCUT WORDS: there is no command parser here, so treat these typed words as requests: "next" = move to the next \
+step; "simpler" = re-explain with a different, simpler picture and a smaller step; "deeper" = how it really works \
+underneath; "example" = one more example; "stuck" = next hint on the hint ladder; "why" = why this matters for the job; \
+"quiz" = quiz me one question at a time; "recap" = the three-part recap then the exit quiz; "done" = grade and save.
+"""
+
+
+def build_system(config, surface="terminal", with_tools=False):
     language = config.get("language", "English")
     rule = LANGUAGE_ENGLISH if language.lower() == "english" else LANGUAGE_OTHER.format(language=language)
-    return SYSTEM.format(
+    text = SYSTEM.format(
+        format_rule=FORMAT_CHAT if surface == "chat" else FORMAT_TERMINAL,
         name=config.get("name", "friend"),
         theme=config.get("theme", "Indian everyday life"),
         language_rule=rule,
     )
+    return text + (DESKTOP_APPENDIX if with_tools else "")
 
 
 def lesson_context(lesson, completed_titles, weak_points, project_text):

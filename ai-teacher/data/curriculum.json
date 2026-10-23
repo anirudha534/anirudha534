@@ -1,0 +1,2370 @@
+{
+ "months": {
+  "1": {
+   "title": "Month 1 — Zero to a Developer Who Can Ship",
+   "theme": "Python · FastAPI · databases · Docker · deploy · then one week of AI"
+  },
+  "2": {
+   "title": "Month 2 — LLM Systems & Your First Two Projects",
+   "theme": "APIs · tool use · structured outputs · MCP server (Project 4) · start the agent (Project 1)"
+  },
+  "3": {
+   "title": "Month 3 — Ship the Agent, Learn RAG & Evals, Start Medical RAG",
+   "theme": "Retrieval done right · evaluation that signals seniority · ship Project 1 · begin Project 2"
+  },
+  "4": {
+   "title": "Month 4 — Ship Medical RAG, Learn Fine-Tuning, Ship Legal Classifier",
+   "theme": "Finish Project 2 (RAG) · learn fine-tuning · build + ship Project 3 (legal classifier)"
+  },
+  "5": {
+   "title": "Month 5 — Make One Project Enterprise-Grade",
+   "theme": "Auth · security · reliability · cost · CI with an eval-gate — the month almost nobody does"
+  },
+  "6": {
+   "title": "Month 6 — Polish, Demos, Interview Prep, Apply Hard",
+   "theme": "Present the work · prep both interview tracks · sustained daily applications"
+  }
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "month": 1,
+   "title": "Python & the modern toolchain",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "Python basics (skip to Wed if you already code)",
+     "tasks": [
+      {
+       "id": "w1-mon-1",
+       "text": "Watch CS50P lecture 0 (functions, variables) — code along, don't just watch"
+      },
+      {
+       "id": "w1-mon-2",
+       "text": "Redo every example from the lecture yourself in a fresh file, no copy-paste"
+      },
+      {
+       "id": "w1-mon-3",
+       "text": "Write one tiny script: ask for a name, print a greeting"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "control flow & data",
+     "tasks": [
+      {
+       "id": "w1-tue-1",
+       "text": "CS50P lecture 1–2 (conditionals, loops)"
+      },
+      {
+       "id": "w1-tue-2",
+       "text": "Write a script that loops over a list and filters it"
+      },
+      {
+       "id": "w1-tue-3",
+       "text": "Do 2 Exercism Python exercises"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "modern tooling",
+     "tasks": [
+      {
+       "id": "w1-wed-1",
+       "text": "Install and learn uv (creates isolated project environments) — make one project"
+      },
+      {
+       "id": "w1-wed-2",
+       "text": "Add type hints to yesterday's script; run mypy on it"
+      },
+      {
+       "id": "w1-wed-3",
+       "text": "Learn the pyproject.toml file — what it's for"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "testing",
+     "tasks": [
+      {
+       "id": "w1-thu-1",
+       "text": "Learn pytest basics: write a function, write a test for it, run it"
+      },
+      {
+       "id": "w1-thu-2",
+       "text": "Learn fixtures and parametrize with one small example each"
+      },
+      {
+       "id": "w1-thu-3",
+       "text": "Get one test suite passing green"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "async (important later)",
+     "tasks": [
+      {
+       "id": "w1-fri-1",
+       "text": "Learn what async/await means conceptually (concurrency without threads)"
+      },
+      {
+       "id": "w1-fri-2",
+       "text": "Write one async function that fetches two URLs at once with asyncio.gather"
+      },
+      {
+       "id": "w1-fri-3",
+       "text": "Note in your own words why LLM apps need this"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "build (4 hrs)",
+     "tasks": [
+      {
+       "id": "w1-sat-1",
+       "text": "Build a CLI tool that calls a free public API (e.g. weather)"
+      },
+      {
+       "id": "w1-sat-2",
+       "text": "Add retry-on-failure and structured logging"
+      },
+      {
+       "id": "w1-sat-3",
+       "text": "Write 2–3 tests for it; push it to a new GitHub repo with a README"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "AI account setup + writing (3 hrs)",
+     "tasks": [
+      {
+       "id": "w1-sun-1",
+       "text": "Create Anthropic + OpenAI API accounts; make your first API call from Python"
+      },
+      {
+       "id": "w1-sun-2",
+       "text": "Read the Anthropic API 'getting started' docs end to end"
+      },
+      {
+       "id": "w1-sun-3",
+       "text": "Draft your first LinkedIn post: 'I'm switching into AI engineering — here's my 6-month plan'"
+      },
+      {
+       "id": "w1-sun-4",
+       "text": "This week: ask your manager for any customer-facing / POC work (changes how your resume reads later, costs zero study time)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "month": 1,
+   "title": "FastAPI & Pydantic (building web services)",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "FastAPI basics",
+     "tasks": [
+      {
+       "id": "w2-mon-1",
+       "text": "Follow the FastAPI first-steps tutorial; get a server running locally"
+      },
+      {
+       "id": "w2-mon-2",
+       "text": "Add two endpoints (GET and POST) with request/response models"
+      },
+      {
+       "id": "w2-mon-3",
+       "text": "Open the auto-generated /docs page and test your endpoints there"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "Pydantic v2",
+     "tasks": [
+      {
+       "id": "w2-tue-1",
+       "text": "Learn Pydantic models: fields, types, defaults"
+      },
+      {
+       "id": "w2-tue-2",
+       "text": "Add a validator and a nested model"
+      },
+      {
+       "id": "w2-tue-3",
+       "text": "Make your POST endpoint validate its input with a model"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "structure & errors",
+     "tasks": [
+      {
+       "id": "w2-wed-1",
+       "text": "Learn dependency injection with one simple dependency"
+      },
+      {
+       "id": "w2-wed-2",
+       "text": "Add a custom exception handler that returns clean error JSON"
+      },
+      {
+       "id": "w2-wed-3",
+       "text": "Add middleware that logs every request"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "streaming",
+     "tasks": [
+      {
+       "id": "w2-thu-1",
+       "text": "Learn Server-Sent Events (SSE); add one streaming endpoint"
+      },
+      {
+       "id": "w2-thu-2",
+       "text": "Stream a slow counter to the browser to see it work"
+      },
+      {
+       "id": "w2-thu-3",
+       "text": "Note why token-by-token LLM streaming uses this"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "auth",
+     "tasks": [
+      {
+       "id": "w2-fri-1",
+       "text": "Add API-key auth to an endpoint"
+      },
+      {
+       "id": "w2-fri-2",
+       "text": "Learn what a JWT is; protect one route with a JWT check"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "build (4 hrs)",
+     "tasks": [
+      {
+       "id": "w2-sat-1",
+       "text": "Build a small real service: a notes/tasks API with CRUD + auth + one streaming endpoint"
+      },
+      {
+       "id": "w2-sat-2",
+       "text": "Write tests for the main endpoints"
+      },
+      {
+       "id": "w2-sat-3",
+       "text": "Push to GitHub with a clear README"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "deploy + writing (3 hrs)",
+     "tasks": [
+      {
+       "id": "w2-sun-1",
+       "text": "Deploy the service free (Render, Fly.io, or Railway); confirm it's live on the internet"
+      },
+      {
+       "id": "w2-sun-2",
+       "text": "Publish LinkedIn post #1 (your plan / first service)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "month": 1,
+   "title": "Databases",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "Postgres",
+     "tasks": [
+      {
+       "id": "w3-mon-1",
+       "text": "Install Postgres locally (or use a free Neon/Supabase instance)"
+      },
+      {
+       "id": "w3-mon-2",
+       "text": "Learn basic SQL: CREATE TABLE, INSERT, SELECT"
+      },
+      {
+       "id": "w3-mon-3",
+       "text": "Connect to it from Python (asyncpg or psycopg)"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "real queries",
+     "tasks": [
+      {
+       "id": "w3-tue-1",
+       "text": "Learn JOINs with two related tables"
+      },
+      {
+       "id": "w3-tue-2",
+       "text": "Learn CTEs and one window function"
+      },
+      {
+       "id": "w3-tue-3",
+       "text": "Run EXPLAIN ANALYZE on a query; read the output"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "embeddings storage (pgvector)",
+     "tasks": [
+      {
+       "id": "w3-wed-1",
+       "text": "Read what a vector embedding is: a list of numbers capturing meaning (full use comes in Month 2)"
+      },
+      {
+       "id": "w3-wed-2",
+       "text": "Install pgvector; create a table with a vector column"
+      },
+      {
+       "id": "w3-wed-3",
+       "text": "Insert a few embeddings from an API and run a similarity query"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "migrations",
+     "tasks": [
+      {
+       "id": "w3-thu-1",
+       "text": "Learn Alembic; generate your first migration"
+      },
+      {
+       "id": "w3-thu-2",
+       "text": "Add a column via a migration and apply it"
+      },
+      {
+       "id": "w3-thu-3",
+       "text": "Understand why you never edit a live schema by hand"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "background work",
+     "tasks": [
+      {
+       "id": "w3-fri-1",
+       "text": "Learn one background-job approach (arq, or Postgres SKIP LOCKED)"
+      },
+      {
+       "id": "w3-fri-2",
+       "text": "Queue one job and process it asynchronously"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "build (4 hrs)",
+     "tasks": [
+      {
+       "id": "w3-sat-1",
+       "text": "Add Postgres persistence to Week 2's service (replace in-memory storage)"
+      },
+      {
+       "id": "w3-sat-2",
+       "text": "Add one pgvector table and a migration"
+      },
+      {
+       "id": "w3-sat-3",
+       "text": "Redeploy; confirm data persists across restarts"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "SQL practice + Project 1 scoping (3 hrs)",
+     "tasks": [
+      {
+       "id": "w3-sun-1",
+       "text": "Do a SQLBolt or pgexercises set for an hour"
+      },
+      {
+       "id": "w3-sun-2",
+       "text": "Read the Project 1 (agent) spec at the end of this doc; note your data source"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "month": 1,
+   "title": "Docker, CI/CD, and first AI concepts",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "Docker basics",
+     "tasks": [
+      {
+       "id": "w4-mon-1",
+       "text": "Learn what a container is vs a virtual machine (plain terms)"
+      },
+      {
+       "id": "w4-mon-2",
+       "text": "Write a Dockerfile for your service; build the image"
+      },
+      {
+       "id": "w4-mon-3",
+       "text": "Run the container locally and hit its endpoints"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "docker compose",
+     "tasks": [
+      {
+       "id": "w4-tue-1",
+       "text": "Write a docker-compose.yml running your app + Postgres together"
+      },
+      {
+       "id": "w4-tue-2",
+       "text": "Bring the whole stack up with one command"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "deploy the container",
+     "tasks": [
+      {
+       "id": "w4-wed-1",
+       "text": "Deploy your Docker image to Google Cloud Run (free tier)"
+      },
+      {
+       "id": "w4-wed-2",
+       "text": "Set environment variables and secrets the proper way (not in code)"
+      },
+      {
+       "id": "w4-wed-3",
+       "text": "Add a /health endpoint and confirm it responds"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "CI/CD",
+     "tasks": [
+      {
+       "id": "w4-thu-1",
+       "text": "Create a GitHub Actions workflow: lint + test on every push"
+      },
+      {
+       "id": "w4-thu-2",
+       "text": "Extend it to build the Docker image on the main branch"
+      },
+      {
+       "id": "w4-thu-3",
+       "text": "Watch a green pipeline run end to end"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "AI fundamentals (1 of 3)",
+     "tasks": [
+      {
+       "id": "w4-fri-1",
+       "text": "Start Karpathy's 'Let's build GPT' video — code along, pause often"
+      },
+      {
+       "id": "w4-fri-2",
+       "text": "Get through tokenization + the bigram model section"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "AI fundamentals (2 of 3) (4 hrs)",
+     "tasks": [
+      {
+       "id": "w4-sat-1",
+       "text": "Continue Karpathy: self-attention section, coding along fully"
+      },
+      {
+       "id": "w4-sat-2",
+       "text": "Don't worry about mastering the math — aim to follow the shapes and the idea"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "AI fundamentals (3 of 3) + writing (3 hrs)",
+     "tasks": [
+      {
+       "id": "w4-sun-1",
+       "text": "Finish the Karpathy video"
+      },
+      {
+       "id": "w4-sun-2",
+       "text": "Write one page of plain-English notes on: tokens, embeddings, attention, why bigger context costs more"
+      },
+      {
+       "id": "w4-sun-3",
+       "text": "Publish LinkedIn post #2 (what you learned building a tiny GPT)"
+      },
+      {
+       "id": "w4-sun-4",
+       "text": "I can explain, in plain words, what an API, database, container, and deployment are"
+      },
+      {
+       "id": "w4-sun-5",
+       "text": "I have deployed a live, containerized service to the internet by myself"
+      },
+      {
+       "id": "w4-sun-6",
+       "text": "I have a CI pipeline that tests and builds my code automatically"
+      },
+      {
+       "id": "w4-sun-7",
+       "text": "I can describe what attention does without needing to prove the math"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "month": 2,
+   "title": "LLM API fluency",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "the Messages API",
+     "tasks": [
+      {
+       "id": "w5-mon-1",
+       "text": "Learn system prompts, temperature, max tokens; send varied requests"
+      },
+      {
+       "id": "w5-mon-2",
+       "text": "Learn token counting; estimate the cost of a call before making it"
+      },
+      {
+       "id": "w5-mon-3",
+       "text": "Log tokens + cost for every call you make this week"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "tool use (most important skill)",
+     "tasks": [
+      {
+       "id": "w5-tue-1",
+       "text": "Read the tool-use docs; understand the request → tool_call → result → final loop"
+      },
+      {
+       "id": "w5-tue-2",
+       "text": "Give a model one tool (a calculator function) and complete the loop"
+      },
+      {
+       "id": "w5-tue-3",
+       "text": "Handle a tool error and feed it back to the model"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "structured outputs",
+     "tasks": [
+      {
+       "id": "w5-wed-1",
+       "text": "Install Instructor; extract a Pydantic object from freeform text"
+      },
+      {
+       "id": "w5-wed-2",
+       "text": "Add validation; make it retry when the model returns an invalid shape"
+      },
+      {
+       "id": "w5-wed-3",
+       "text": "Confirm you always get a valid typed object out"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "cost & speed levers",
+     "tasks": [
+      {
+       "id": "w5-thu-1",
+       "text": "Learn prompt caching and when it helps"
+      },
+      {
+       "id": "w5-thu-2",
+       "text": "Learn the Batch API for bulk jobs"
+      },
+      {
+       "id": "w5-thu-3",
+       "text": "Add streaming to a call so tokens appear live"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "model comparison",
+     "tasks": [
+      {
+       "id": "w5-fri-1",
+       "text": "Pick one task; run it on a small, mid, and large model"
+      },
+      {
+       "id": "w5-fri-2",
+       "text": "Record cost, latency, and quality for each in a table"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "build (4 hrs)",
+     "tasks": [
+      {
+       "id": "w5-sat-1",
+       "text": "Build a multi-turn assistant: tool use + streaming + structured output"
+      },
+      {
+       "id": "w5-sat-2",
+       "text": "Log per-request cost throughout"
+      },
+      {
+       "id": "w5-sat-3",
+       "text": "Push to GitHub"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "writing (3 hrs)",
+     "tasks": [
+      {
+       "id": "w5-sun-1",
+       "text": "Publish LinkedIn post #3: your model-comparison table with real numbers"
+      },
+      {
+       "id": "w5-sun-2",
+       "text": "Skim the ReAct paper abstract (agent groundwork for Week 8)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "month": 2,
+   "title": "Prompting, failure modes, and start the MCP server (Project 4)",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "prompt structure",
+     "tasks": [
+      {
+       "id": "w6-mon-1",
+       "text": "Read Anthropic's prompt engineering guide"
+      },
+      {
+       "id": "w6-mon-2",
+       "text": "Rewrite a weak prompt using structure + examples; compare outputs"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "how models fail",
+     "tasks": [
+      {
+       "id": "w6-tue-1",
+       "text": "Learn hallucination, instruction drift, and prompt injection (hidden text hijacking behavior)"
+      },
+      {
+       "id": "w6-tue-2",
+       "text": "Deliberately trigger a prompt injection on your Week 5 app to see it"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "guardrails",
+     "tasks": [
+      {
+       "id": "w6-wed-1",
+       "text": "Add input validation and output validation to your assistant"
+      },
+      {
+       "id": "w6-wed-2",
+       "text": "Add a basic refusal path for out-of-scope requests"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "MCP intro (Project 4 begins)",
+     "tasks": [
+      {
+       "id": "w6-thu-1",
+       "text": "Read the MCP docs: what a server, tool, and resource are"
+      },
+      {
+       "id": "w6-thu-2",
+       "text": "Run an example MCP server; connect it to Claude Desktop"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "design your MCP server",
+     "tasks": [
+      {
+       "id": "w6-fri-1",
+       "text": "Pick a genuinely useful tool to expose (an API you'd actually use)"
+      },
+      {
+       "id": "w6-fri-2",
+       "text": "Sketch 3–4 well-scoped tools it will offer"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "build Project 4 v0 (4 hrs)",
+     "tasks": [
+      {
+       "id": "w6-sat-1",
+       "text": "Implement your MCP server's first two tools"
+      },
+      {
+       "id": "w6-sat-2",
+       "text": "Connect it to a client and call the tools successfully"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "Project 1 data prep (3 hrs)",
+     "tasks": [
+      {
+       "id": "w6-sun-1",
+       "text": "Read the Project 1 (agent) spec again; set up the repo"
+      },
+      {
+       "id": "w6-sun-2",
+       "text": "Ingest your first batch of source data"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "month": 2,
+   "title": "Finish MCP server + build Project 1 retrieval",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "MCP error handling",
+     "tasks": [
+      {
+       "id": "w7-mon-1",
+       "text": "Add proper error returns and input validation to every tool"
+      },
+      {
+       "id": "w7-mon-2",
+       "text": "Decide what NOT to expose (a security judgment) and note why"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "MCP polish",
+     "tasks": [
+      {
+       "id": "w7-tue-1",
+       "text": "Write the README: what it does, install steps, example calls, limitations"
+      },
+      {
+       "id": "w7-tue-2",
+       "text": "Add tests for each tool"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "publish Project 4",
+     "tasks": [
+      {
+       "id": "w7-wed-1",
+       "text": "Publish the MCP server to PyPI or npm"
+      },
+      {
+       "id": "w7-wed-2",
+       "text": "List it where MCP servers are catalogued"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "Project 1: embeddings",
+     "tasks": [
+      {
+       "id": "w7-thu-1",
+       "text": "Embed your source documents into pgvector"
+      },
+      {
+       "id": "w7-thu-2",
+       "text": "Run a basic similarity search and eyeball the results"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "Project 1: tool definitions",
+     "tasks": [
+      {
+       "id": "w7-fri-1",
+       "text": "Define the agent's tools (search, fetch, calculate, etc. per the spec)"
+      },
+      {
+       "id": "w7-fri-2",
+       "text": "Stub each tool so it returns something callable"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "build (4 hrs)",
+     "tasks": [
+      {
+       "id": "w7-sat-1",
+       "text": "Wire the retrieval tool into a first agent call"
+      },
+      {
+       "id": "w7-sat-2",
+       "text": "Get one real query flowing end to end (rough is fine)"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "writing (3 hrs)",
+     "tasks": [
+      {
+       "id": "w7-sun-1",
+       "text": "Publish LinkedIn post #4: designing an MCP server (a decision you made and why)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "month": 2,
+   "title": "Project 1 agent loop",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "the agent loop",
+     "tasks": [
+      {
+       "id": "w8-mon-1",
+       "text": "Read Anthropic's 'building effective agents' guide"
+      },
+      {
+       "id": "w8-mon-2",
+       "text": "Implement the plan → act → observe → decide loop skeleton"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "multi-tool",
+     "tasks": [
+      {
+       "id": "w8-tue-1",
+       "text": "Let the agent choose among all its tools"
+      },
+      {
+       "id": "w8-tue-2",
+       "text": "Handle a multi-step task that needs two tool calls"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "action + output",
+     "tasks": [
+      {
+       "id": "w8-wed-1",
+       "text": "Implement the agent's final deliverable (the memo/report per spec)"
+      },
+      {
+       "id": "w8-wed-2",
+       "text": "Make outputs cite their sources"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "first eval",
+     "tasks": [
+      {
+       "id": "w8-thu-1",
+       "text": "Create 20 test cases with expected outcomes"
+      },
+      {
+       "id": "w8-thu-2",
+       "text": "Write a script that runs them and scores pass/fail"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "read the failures",
+     "tasks": [
+      {
+       "id": "w8-fri-1",
+       "text": "Run all 20; read every output by hand"
+      },
+      {
+       "id": "w8-fri-2",
+       "text": "Write down the top 5 failure patterns"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "build (4 hrs)",
+     "tasks": [
+      {
+       "id": "w8-sat-1",
+       "text": "Fix the two biggest failure patterns"
+      },
+      {
+       "id": "w8-sat-2",
+       "text": "Re-run the eval; confirm the numbers moved"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "reps + writing (3 hrs)",
+     "tasks": [
+      {
+       "id": "w8-sun-1",
+       "text": "Send 3 job applications to roles you expect to lose (interview practice, starts now)"
+      },
+      {
+       "id": "w8-sun-2",
+       "text": "One informational message to someone in an FDE/applied-AI role"
+      },
+      {
+       "id": "w8-sun-3",
+       "text": "I can explain tool use and structured outputs to a beginner"
+      },
+      {
+       "id": "w8-sun-4",
+       "text": "I compared 3 models on one task with real cost/latency/quality numbers"
+      },
+      {
+       "id": "w8-sun-5",
+       "text": "My MCP server is public, documented, and installable"
+      },
+      {
+       "id": "w8-sun-6",
+       "text": "My agent runs end to end on real inputs and I know its top failure modes"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 9,
+   "month": 3,
+   "title": "RAG from primitives (for Project 2, applied to Project 1 too)",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "chunking",
+     "tasks": [
+      {
+       "id": "w9-mon-1",
+       "text": "Learn chunking strategies; split a document three different ways"
+      },
+      {
+       "id": "w9-mon-2",
+       "text": "See how chunk size changes what retrieval returns"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "embeddings choice",
+     "tasks": [
+      {
+       "id": "w9-tue-1",
+       "text": "Compare two embedding models on the same corpus"
+      },
+      {
+       "id": "w9-tue-2",
+       "text": "Learn how to pick based on domain + cost"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "hybrid retrieval",
+     "tasks": [
+      {
+       "id": "w9-wed-1",
+       "text": "Add keyword search (BM25) alongside vector search"
+      },
+      {
+       "id": "w9-wed-2",
+       "text": "Combine them (reciprocal rank fusion); compare to vector-only"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "reranking",
+     "tasks": [
+      {
+       "id": "w9-thu-1",
+       "text": "Add a cross-encoder reranker over your top results"
+      },
+      {
+       "id": "w9-thu-2",
+       "text": "Measure whether the latency cost is worth the precision gain"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "when NOT to use RAG",
+     "tasks": [
+      {
+       "id": "w9-fri-1",
+       "text": "List cases where RAG is wrong (needs a DB query, or long-context, or fine-tuning)"
+      },
+      {
+       "id": "w9-fri-2",
+       "text": "Write a paragraph you could say in an interview on this"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "apply to Project 1 (4 hrs)",
+     "tasks": [
+      {
+       "id": "w9-sat-1",
+       "text": "Upgrade Project 1's retrieval to hybrid + rerank"
+      },
+      {
+       "id": "w9-sat-2",
+       "text": "Re-run the eval; record the improvement"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "retrieval eval (3 hrs)",
+     "tasks": [
+      {
+       "id": "w9-sun-1",
+       "text": "Build a labelled query set; measure recall@k and MRR"
+      },
+      {
+       "id": "w9-sun-2",
+       "text": "Note what these metrics mean in plain words"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 10,
+   "month": 3,
+   "title": "Evaluation design (the differentiator)",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "eval types",
+     "tasks": [
+      {
+       "id": "w10-mon-1",
+       "text": "Learn unit vs task vs end-to-end evals, offline vs online"
+      },
+      {
+       "id": "w10-mon-2",
+       "text": "Classify your Project 1 evals into these buckets"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "LLM-as-judge",
+     "tasks": [
+      {
+       "id": "w10-tue-1",
+       "text": "Use a model to grade outputs; learn its biases (length, confidence, self-preference)"
+      },
+      {
+       "id": "w10-tue-2",
+       "text": "Calibrate your judge against your own human labels on 20 items"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "stats honesty",
+     "tasks": [
+      {
+       "id": "w10-wed-1",
+       "text": "Learn why small samples and small deltas lie"
+      },
+      {
+       "id": "w10-wed-2",
+       "text": "Add confidence intervals to one metric"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "eval tooling",
+     "tasks": [
+      {
+       "id": "w10-thu-1",
+       "text": "Set up one platform (Langfuse, promptfoo, or Braintrust)"
+      },
+      {
+       "id": "w10-thu-2",
+       "text": "Pipe Project 1's eval through it"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "Project 1 full harness",
+     "tasks": [
+      {
+       "id": "w10-fri-1",
+       "text": "Assemble the full metric set: task accuracy, cost/task, p50/p95 latency"
+      },
+      {
+       "id": "w10-fri-2",
+       "text": "Make the whole eval runnable with one command"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "build (4 hrs)",
+     "tasks": [
+      {
+       "id": "w10-sat-1",
+       "text": "Grow Project 1's labelled test set toward 100+ items"
+      },
+      {
+       "id": "w10-sat-2",
+       "text": "Lock a clean baseline result"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "writing (3 hrs)",
+     "tasks": [
+      {
+       "id": "w10-sun-1",
+       "text": "Publish LinkedIn post #5: how you evaluate an agent (metrics + a real failure)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 11,
+   "month": 3,
+   "title": "Harden & finish Project 1",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "tracing",
+     "tasks": [
+      {
+       "id": "w11-mon-1",
+       "text": "Add tracing to every model + tool call so you can debug any run"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "reliability",
+     "tasks": [
+      {
+       "id": "w11-tue-1",
+       "text": "Add retries, timeouts, and graceful degradation to tool calls"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "cost cascade",
+     "tasks": [
+      {
+       "id": "w11-wed-1",
+       "text": "Try a cheap model first, escalate to the expensive one only when needed; measure the saving"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "safety rails",
+     "tasks": [
+      {
+       "id": "w11-thu-1",
+       "text": "Add limits so the agent can't take a harmful/irreversible action; test them"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "tune routing",
+     "tasks": [
+      {
+       "id": "w11-fri-1",
+       "text": "Tune any confidence thresholds against your test set"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "build (4 hrs)",
+     "tasks": [
+      {
+       "id": "w11-sat-1",
+       "text": "Final fixes; freeze the results table for the case study"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "Project 2 kickoff (3 hrs)",
+     "tasks": [
+      {
+       "id": "w11-sun-1",
+       "text": "Read the Project 2 (medical RAG) spec; pick your corpus (e.g. PubMed abstracts)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "month": 3,
+   "title": "Demo, case study, SHIP Project 1",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "demo UI",
+     "tasks": [
+      {
+       "id": "w12-mon-1",
+       "text": "Build a simple Streamlit demo: query in, reasoning + sources + result out"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "architecture diagram",
+     "tasks": [
+      {
+       "id": "w12-tue-1",
+       "text": "Draw the system in Excalidraw or Mermaid (keep it simple)"
+      }
+     ]
+    },
+    {
+     "day": "Wed–Thu",
+     "title": "case study README",
+     "tasks": [
+      {
+       "id": "w12-wed_thu-1",
+       "text": "Write it in the required shape (problem, constraints, architecture, results, failures, next steps)"
+      },
+      {
+       "id": "w12-wed_thu-2",
+       "text": "Put the real numbers table front and center"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "final eval run",
+     "tasks": [
+      {
+       "id": "w12-fri-1",
+       "text": "Run the eval once more; the case-study numbers must come from THIS run"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "SHIP (4 hrs)",
+     "tasks": [
+      {
+       "id": "w12-sat-1",
+       "text": "Publish the repo + case study; deploy the demo live"
+      },
+      {
+       "id": "w12-sat-2",
+       "text": "Record a 2-minute demo video incl. one failure you fixed"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "writing + apply (3 hrs)",
+     "tasks": [
+      {
+       "id": "w12-sun-1",
+       "text": "Publish LinkedIn post about the shipped agent (lead with numbers)"
+      },
+      {
+       "id": "w12-sun-2",
+       "text": "Send 5 applications"
+      },
+      {
+       "id": "w12-sun-3",
+       "text": "Project 1 is live with defensible numbers and a 2-min demo video"
+      },
+      {
+       "id": "w12-sun-4",
+       "text": "I can explain my eval methodology and my agent's failure modes unprompted"
+      },
+      {
+       "id": "w12-sun-5",
+       "text": "I understand when RAG is the wrong tool and can say why"
+      },
+      {
+       "id": "w12-sun-6",
+       "text": "5 posts published; applications have started"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "month": 4,
+   "title": "Build & ship Project 2 (medical RAG)",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "ingest corpus",
+     "tasks": [
+      {
+       "id": "w13-mon-1",
+       "text": "Load and chunk your medical corpus (e.g. PubMed abstracts)"
+      },
+      {
+       "id": "w13-mon-2",
+       "text": "Embed into pgvector"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "build the pipeline",
+     "tasks": [
+      {
+       "id": "w13-tue-1",
+       "text": "Assemble hybrid retrieval + rerank + answer generation with citations"
+      },
+      {
+       "id": "w13-tue-2",
+       "text": "Force citations to specific sources"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "build the gold set",
+     "tasks": [
+      {
+       "id": "w13-wed-1",
+       "text": "Write 50–100 questions with known correct answers/sources"
+      },
+      {
+       "id": "w13-wed-2",
+       "text": "This is the expensive part; do it carefully"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "evaluate",
+     "tasks": [
+      {
+       "id": "w13-thu-1",
+       "text": "Measure faithfulness (are claims supported by retrieved text?), answer relevance, retrieval recall"
+      },
+      {
+       "id": "w13-thu-2",
+       "text": "Use RAGAS or your own harness"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "hallucination guard",
+     "tasks": [
+      {
+       "id": "w13-fri-1",
+       "text": "Add a check that flags/blocks unsupported claims"
+      },
+      {
+       "id": "w13-fri-2",
+       "text": "Re-measure faithfulness after adding it"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "SHIP (4 hrs)",
+     "tasks": [
+      {
+       "id": "w13-sat-1",
+       "text": "Demo UI + architecture diagram + case study"
+      },
+      {
+       "id": "w13-sat-2",
+       "text": "Publish repo, deploy demo, record 2-min video"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "writing (3 hrs)",
+     "tasks": [
+      {
+       "id": "w13-sun-1",
+       "text": "LinkedIn post #6: measuring a RAG system (faithfulness + a failure you found)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 14,
+   "month": 4,
+   "title": "Fine-tuning foundations (for Project 3)",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "concepts",
+     "tasks": [
+      {
+       "id": "w14-mon-1",
+       "text": "Learn what fine-tuning is vs prompting vs RAG; when each fits"
+      },
+      {
+       "id": "w14-mon-2",
+       "text": "Learn LoRA in plain terms (adjust a small add-on, not the whole model)"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "the honest baseline",
+     "tasks": [
+      {
+       "id": "w14-tue-1",
+       "text": "Define the legal-clause classification task + label set"
+      },
+      {
+       "id": "w14-tue-2",
+       "text": "Build a prompt-only baseline and measure it FIRST"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "data prep",
+     "tasks": [
+      {
+       "id": "w14-wed-1",
+       "text": "Assemble a labelled dataset (e.g. from CUAD clause types)"
+      },
+      {
+       "id": "w14-wed-2",
+       "text": "Split train / validation / test properly"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "first fine-tune",
+     "tasks": [
+      {
+       "id": "w14-thu-1",
+       "text": "Fine-tune a small model with LoRA via Unsloth on free Colab"
+      },
+      {
+       "id": "w14-thu-2",
+       "text": "Get it training and producing predictions"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "evaluate vs baseline",
+     "tasks": [
+      {
+       "id": "w14-fri-1",
+       "text": "Measure the fine-tuned model on the SAME test set as the baseline"
+      },
+      {
+       "id": "w14-fri-2",
+       "text": "Record accuracy, cost, and latency for both"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "build (4 hrs)",
+     "tasks": [
+      {
+       "id": "w14-sat-1",
+       "text": "Try 2–3 LoRA settings; keep the best"
+      },
+      {
+       "id": "w14-sat-2",
+       "text": "Build the comparison table: prompt-only vs fine-tuned"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "Project 3 scoping writeup (3 hrs)",
+     "tasks": [
+      {
+       "id": "w14-sun-1",
+       "text": "Draft the 'when to fine-tune' argument your case study will make"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 15,
+   "month": 4,
+   "title": "Finish & ship Project 3 (legal classifier)",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "serving",
+     "tasks": [
+      {
+       "id": "w15-mon-1",
+       "text": "Wrap the fine-tuned model behind a FastAPI endpoint"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "confidence + fallback",
+     "tasks": [
+      {
+       "id": "w15-tue-1",
+       "text": "Return confidence; fall back to a larger model on low confidence"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "error analysis",
+     "tasks": [
+      {
+       "id": "w15-wed-1",
+       "text": "Analyze where it fails; note which clause types are hardest and why"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "case study",
+     "tasks": [
+      {
+       "id": "w15-thu-1",
+       "text": "Write it around the judgment: when fine-tuning is worth it and when it isn't"
+      },
+      {
+       "id": "w15-thu-2",
+       "text": "Include the full comparison table"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "final eval",
+     "tasks": [
+      {
+       "id": "w15-fri-1",
+       "text": "Lock final numbers from one clean run"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "SHIP (4 hrs)",
+     "tasks": [
+      {
+       "id": "w15-sat-1",
+       "text": "Publish repo + case study; deploy demo; record 2-min video"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "writing + apply (3 hrs)",
+     "tasks": [
+      {
+       "id": "w15-sun-1",
+       "text": "LinkedIn post #7 (fine-tuning judgment)"
+      },
+      {
+       "id": "w15-sun-2",
+       "text": "Send 8 applications"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 16,
+   "month": 4,
+   "title": "Buffer & consolidation",
+   "days": [
+    {
+     "day": "Mon–Wed",
+     "title": "catch up",
+     "tasks": [
+      {
+       "id": "w16-mon_wed-1",
+       "text": "Finish anything unshipped from Projects 2 or 3"
+      },
+      {
+       "id": "w16-mon_wed-2",
+       "text": "Tighten any README or demo that's weak"
+      }
+     ]
+    },
+    {
+     "day": "Thu–Fri",
+     "title": "portfolio pass",
+     "tasks": [
+      {
+       "id": "w16-thu_fri-1",
+       "text": "Make sure all four projects have: live demo, case study, 2-min video, clean README"
+      },
+      {
+       "id": "w16-thu_fri-2",
+       "text": "Cross-link them so they read as one body of work"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "(4 hrs)",
+     "tasks": [
+      {
+       "id": "w16-sat-1",
+       "text": "Pick which project you'll harden in Month 5 (your strongest)"
+      },
+      {
+       "id": "w16-sat-2",
+       "text": "List what 'enterprise-grade' will require for it"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "(3 hrs)",
+     "tasks": [
+      {
+       "id": "w16-sun-1",
+       "text": "Send 8 applications"
+      },
+      {
+       "id": "w16-sun-2",
+       "text": "Ask two people for referrals"
+      },
+      {
+       "id": "w16-sun-3",
+       "text": "All four projects are live with demos, case studies, and 2-min videos"
+      },
+      {
+       "id": "w16-sun-4",
+       "text": "I can argue when to fine-tune vs prompt vs RAG, with my own numbers"
+      },
+      {
+       "id": "w16-sun-5",
+       "text": "My RAG project reports faithfulness, not just 'it answers questions'"
+      },
+      {
+       "id": "w16-sun-6",
+       "text": "16+ applications sent; referral asks made"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 17,
+   "month": 5,
+   "title": "Identity & access",
+   "days": [
+    {
+     "day": "Mon–Tue",
+     "title": "login",
+     "tasks": [
+      {
+       "id": "w17-mon_tue-1",
+       "text": "Add real login (OIDC/JWT), not just an API key"
+      },
+      {
+       "id": "w17-mon_tue-2",
+       "text": "Validate tokens correctly"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "roles",
+     "tasks": [
+      {
+       "id": "w17-wed-1",
+       "text": "Add role-based access control (admin / user / viewer)"
+      },
+      {
+       "id": "w17-wed-2",
+       "text": "Write a test proving a viewer can't do admin actions"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "multi-tenancy",
+     "tasks": [
+      {
+       "id": "w17-thu-1",
+       "text": "Isolate data per customer (row-level)"
+      },
+      {
+       "id": "w17-thu-2",
+       "text": "Write a test proving tenant A cannot read tenant B's data"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "audit log",
+     "tasks": [
+      {
+       "id": "w17-fri-1",
+       "text": "Log who did what, when, to which record, append-only"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "(4 hrs)",
+     "tasks": [
+      {
+       "id": "w17-sat-1",
+       "text": "Implement all of the above; get the isolation test passing"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "(3 hrs)",
+     "tasks": [
+      {
+       "id": "w17-sun-1",
+       "text": "Send applications; one cold outreach"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 18,
+   "month": 5,
+   "title": "Security & data handling",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "PII",
+     "tasks": [
+      {
+       "id": "w18-mon-1",
+       "text": "Add PII detection + redaction before any model call (Presidio)"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "injection defense",
+     "tasks": [
+      {
+       "id": "w18-tue-1",
+       "text": "Add layered prompt-injection defenses; separate privileges so a hijacked prompt can't reach dangerous tools"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "deployment topology",
+     "tasks": [
+      {
+       "id": "w18-wed-1",
+       "text": "Learn what deploying inside a customer VPC with no internet egress means"
+      },
+      {
+       "id": "w18-wed-2",
+       "text": "Note what data would/wouldn't leave their environment"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "secrets",
+     "tasks": [
+      {
+       "id": "w18-thu-1",
+       "text": "Proper secrets management; confirm no secret ever hits a log"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "threat model",
+     "tasks": [
+      {
+       "id": "w18-fri-1",
+       "text": "Write a threat model: assets, attackers, attack paths, mitigations"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "(4 hrs)",
+     "tasks": [
+      {
+       "id": "w18-sat-1",
+       "text": "Implement redaction + injection defenses; finish the threat-model doc"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "(3 hrs)",
+     "tasks": [
+      {
+       "id": "w18-sun-1",
+       "text": "Applications; mock 'scope this deployment' out loud, recorded"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 19,
+   "month": 5,
+   "title": "Reliability & cost",
+   "days": [
+    {
+     "day": "Mon–Tue",
+     "title": "resilience",
+     "tasks": [
+      {
+       "id": "w19-mon_tue-1",
+       "text": "Add circuit breakers, timeouts, graceful degradation"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "model fallback",
+     "tasks": [
+      {
+       "id": "w19-wed-1",
+       "text": "Add a provider fallback chain (if one API is down, use another)"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "caching",
+     "tasks": [
+      {
+       "id": "w19-thu-1",
+       "text": "Add prompt / semantic / result caching; measure cost + latency drop"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "cost dashboard",
+     "tasks": [
+      {
+       "id": "w19-fri-1",
+       "text": "Build a per-tenant, per-feature cost view"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "(4 hrs)",
+     "tasks": [
+      {
+       "id": "w19-sat-1",
+       "text": "Load-test with Locust; find and document the breaking point"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "(3 hrs)",
+     "tasks": [
+      {
+       "id": "w19-sun-1",
+       "text": "Applications; one cold outreach"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 20,
+   "month": 5,
+   "title": "CI/CD & operations",
+   "days": [
+    {
+     "day": "Mon–Tue",
+     "title": "pipeline",
+     "tasks": [
+      {
+       "id": "w20-mon_tue-1",
+       "text": "Full CI: lint, test, build, deploy"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "the eval-gate",
+     "tasks": [
+      {
+       "id": "w20-wed-1",
+       "text": "Add an eval-gate: the build FAILS if quality drops below threshold"
+      },
+      {
+       "id": "w20-wed-2",
+       "text": "This one feature is worth more in interviews than another project"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "observability",
+     "tasks": [
+      {
+       "id": "w20-thu-1",
+       "text": "Wire tracing with useful spans; add alerting on quality drift, not just uptime"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "runbook",
+     "tasks": [
+      {
+       "id": "w20-fri-1",
+       "text": "Write a runbook: incidents, rollback steps, common failures + fixes"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "(4 hrs)",
+     "tasks": [
+      {
+       "id": "w20-sat-1",
+       "text": "Get the eval-gate failing on a deliberately bad change, then passing when reverted"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "(3 hrs)",
+     "tasks": [
+      {
+       "id": "w20-sun-1",
+       "text": "Update the project's case study to cover all the hardening; send applications"
+      },
+      {
+       "id": "w20-sun-2",
+       "text": "Tenant isolation is implemented with a passing test that tries to break it"
+      },
+      {
+       "id": "w20-sun-3",
+       "text": "A threat model and a runbook exist and are genuinely useful"
+      },
+      {
+       "id": "w20-sun-4",
+       "text": "CI has an eval-gate that fails a build on a real quality regression"
+      },
+      {
+       "id": "w20-sun-5",
+       "text": "The hardened project's case study reflects all of this"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 21,
+   "month": 6,
+   "title": "Portfolio polish",
+   "days": [
+    {
+     "day": "Mon–Tue",
+     "title": "READMEs",
+     "tasks": [
+      {
+       "id": "w21-mon_tue-1",
+       "text": "Bring all four case studies to the same high standard"
+      },
+      {
+       "id": "w21-mon_tue-2",
+       "text": "Each: problem, constraints, architecture diagram, results table, failures, demo link"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "videos",
+     "tasks": [
+      {
+       "id": "w21-wed-1",
+       "text": "Re-record any weak demo videos; keep each to ~2 minutes"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "LinkedIn",
+     "tasks": [
+      {
+       "id": "w21-thu-1",
+       "text": "Rewrite headline + About + Featured around 'Applied AI / FDE'"
+      },
+      {
+       "id": "w21-thu-2",
+       "text": "Pin your strongest project"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "resume",
+     "tasks": [
+      {
+       "id": "w21-fri-1",
+       "text": "One-page resume led by the four projects and their metrics, not your old title"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "(4 hrs)",
+     "tasks": [
+      {
+       "id": "w21-sat-1",
+       "text": "GitHub profile README that ties the four projects together as one story"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "(3 hrs)",
+     "tasks": [
+      {
+       "id": "w21-sun-1",
+       "text": "Applications now go to 2–3 per day, sustained from here on"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 22,
+   "month": 6,
+   "title": "Technical interview prep",
+   "days": [
+    {
+     "day": "Mon–Tue",
+     "title": "practical coding",
+     "tasks": [
+      {
+       "id": "w22-mon_tue-1",
+       "text": "Drill: integrate an API, parse messy data, handle partial failure (not algorithm puzzles)"
+      },
+      {
+       "id": "w22-mon_tue-2",
+       "text": "2 hours across the two days"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "system design 1",
+     "tasks": [
+      {
+       "id": "w22-wed-1",
+       "text": "Practice out loud: 'design an agent that acts inside a customer's CRM'"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "system design 2",
+     "tasks": [
+      {
+       "id": "w22-thu-1",
+       "text": "Practice: 'RAG over 10M documents with data-residency rules'"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "system design 3",
+     "tasks": [
+      {
+       "id": "w22-fri-1",
+       "text": "Practice: 'evaluate and improve a production AI feature at scale'"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "(4 hrs)",
+     "tasks": [
+      {
+       "id": "w22-sat-1",
+       "text": "Record yourself answering all three; watch back; note fixes"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "(3 hrs)",
+     "tasks": [
+      {
+       "id": "w22-sun-1",
+       "text": "Applications"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 23,
+   "month": 6,
+   "title": "Customer-facing interview prep (the FDE differentiator)",
+   "days": [
+    {
+     "day": "Mon",
+     "title": "discovery",
+     "tasks": [
+      {
+       "id": "w23-mon-1",
+       "text": "Turn a vague business ask into 10 sharp scoping questions"
+      }
+     ]
+    },
+    {
+     "day": "Tue",
+     "title": "scoping",
+     "tasks": [
+      {
+       "id": "w23-tue-1",
+       "text": "Scope a full deployment out loud in 20 minutes"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "hard conversation",
+     "tasks": [
+      {
+       "id": "w23-wed-1",
+       "text": "Practice pushing back on an exec's bad idea without losing the room"
+      }
+     ]
+    },
+    {
+     "day": "Thu",
+     "title": "live debugging",
+     "tasks": [
+      {
+       "id": "w23-thu-1",
+       "text": "'Accuracy dropped last week' — talk through debugging it"
+      }
+     ]
+    },
+    {
+     "day": "Fri",
+     "title": "present projects",
+     "tasks": [
+      {
+       "id": "w23-fri-1",
+       "text": "Present each project as a 10-minute case study, no notes"
+      }
+     ]
+    },
+    {
+     "day": "Sat",
+     "title": "(4 hrs)",
+     "tasks": [
+      {
+       "id": "w23-sat-1",
+       "text": "Record all of the above; watch back"
+      }
+     ]
+    },
+    {
+     "day": "Sun",
+     "title": "(3 hrs)",
+     "tasks": [
+      {
+       "id": "w23-sun-1",
+       "text": "Applications + 5 cold messages"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "week": 24,
+   "month": 6,
+   "title": "Close gaps, sustain",
+   "days": [
+    {
+     "day": "Mon–Tue",
+     "title": "theory refresh",
+     "tasks": [
+      {
+       "id": "w24-mon_tue-1",
+       "text": "Review your attention/transformer notes out loud"
+      },
+      {
+       "id": "w24-mon_tue-2",
+       "text": "Review RAG vs fine-tune vs long-context vs tools decisions"
+      }
+     ]
+    },
+    {
+     "day": "Wed",
+     "title": "the killer answer",
+     "tasks": [
+      {
+       "id": "w24-wed-1",
+       "text": "Prepare a crisp answer for 'when would you NOT use an LLM,' using your own project examples"
+      }
+     ]
+    },
+    {
+     "day": "Thu–Fri",
+     "title": "mock",
+     "tasks": [
+      {
+       "id": "w24-thu_fri-1",
+       "text": "Do a paid or peer mock interview; act on the feedback"
+      },
+      {
+       "id": "w24-thu_fri-2",
+       "text": "2–3 applications/day; 1 cold message/day; one small public artifact/week"
+      },
+      {
+       "id": "w24-thu_fri-3",
+       "text": "Interview, then fix what you got wrong before the next one"
+      },
+      {
+       "id": "w24-thu_fri-4",
+       "text": "Four polished case studies + MCP server + 7 posts are live under my name"
+      },
+      {
+       "id": "w24-thu_fri-5",
+       "text": "I can present any project unscripted in under 10 minutes"
+      },
+      {
+       "id": "w24-thu_fri-6",
+       "text": "I'm sending applications daily and tracking response rates"
+      },
+      {
+       "id": "w24-thu_fri-7",
+       "text": "I have done at least one full mock interview"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "projects": {
+  "1": {
+   "title": "Project 1 — Financial Research & Analysis Agent [pattern: AGENT]",
+   "text": "What it does: Give it a company or a question (“Summarize NVIDIA's latest 10-Q and flag risk-section changes vs the prior quarter”). It plans, pulls the filings, runs calculations, retrieves relevant sections, and produces a cited analyst-style memo. It takes real actions across tools — it doesn't just chat.\nWhy it's golden: Agents that take actions are the highest-demand, least-solved pattern of 2026. Finance is a top enterprise FDE vertical and forces real rigor (numbers must be right, sources must be cited).\nData / sources: SEC EDGAR (free filings API), a market-data API (e.g. yfinance), and the filing text itself as the retrieval corpus.\nTools the agent gets: search_filings, get_financials(ticker), calculate(expression), retrieve_section(query), compare_periods(a,b), write_memo(sections, citations).\nMust do: Multi-step planning; cite every claim to a source; refuse/flag when data is missing rather than inventing it; show its reasoning trace.\nEvaluation (the point): A gold set of ~50 questions with known answers. Measure factual accuracy, citation precision (are cited sources actually relevant), calculation correctness, and cost + latency per query. Report where it still fails.\nStack: Python, FastAPI, Postgres + pgvector, Anthropic API (tool use), Instructor, SEC EDGAR API, yfinance, Langfuse, Streamlit demo.\nInterview probes to prepare for: How do you stop it inventing a number? What happens when a filing format changes? How would this scale to 500 tickers a day?"
+  },
+  "2": {
+   "title": "Project 2 — Medical-Literature Question Answering [pattern: RAG]",
+   "text": "What it does: Answers clinical questions grounded strictly in a medical-literature corpus, with citations to the exact source passages, and refuses to answer beyond what the evidence supports.\nWhy it's golden: A plausible-sounding RAG demo is table stakes; a measured one signals seniority. Healthcare makes faithfulness (no hallucinated claims) genuinely matter, which forces the rigor interviewers look for.\nData / sources: PubMed abstracts (free via NCBI E-utilities) or the PubMedQA dataset (which comes with questions + answers — a partial free gold set).\nMust do: Hybrid retrieval (keyword + vector) + reranking; every claim cited to a passage; an explicit “insufficient evidence” path; no unsupported statements.\nEvaluation (the point): Using PubMedQA or your own 50–100 Q&A gold set, measure faithfulness (are claims supported by retrieved text?), answer relevance, and retrieval recall@k. Show before/after adding the reranker and the hallucination guard.\nStack: Python, FastAPI, Postgres + pgvector, an embedding model + cross-encoder reranker, Anthropic API, RAGAS for eval, Streamlit demo.\nInterview probes: How do you know it isn't hallucinating? What's your faithfulness number and how did you measure it? When would you NOT use RAG here?"
+  },
+  "3": {
+   "title": "Project 3 — Legal Clause Classifier [pattern: FINE-TUNING]",
+   "text": "What it does: Classifies contract clauses into types (indemnification, termination, governing law, etc.) with a small fine-tuned model served behind an API, falling back to a larger model when unsure.\nWhy it's golden: The signal isn't that you CAN fine-tune — it's the judgment of when you SHOULD. You'll prove a small fine-tuned model beats prompting a big one on this narrow task, on accuracy AND cost, and say clearly when it wouldn't be worth it.\nData / sources: CUAD (Contract Understanding Atticus Dataset — free, real legal annotations, gives you labels).\nMust do: Establish a prompt-only baseline FIRST; fine-tune a small model with LoRA; evaluate both on the SAME held-out test set; return confidence and fall back on low confidence.\nEvaluation (the point): A comparison table: prompt-only large model vs fine-tuned small model, on accuracy, cost per 1k clauses, and latency. The case study's thesis is the when-to-fine-tune decision, backed by these numbers.\nStack: Python, Unsloth + PEFT/LoRA on free Colab, a small base model (1–3B), FastAPI serving, CUAD, Streamlit demo.\nInterview probes: Why fine-tune instead of just prompting? What did it cost vs save? When would you have chosen NOT to fine-tune?"
+  },
+  "4": {
+   "title": "Project 4 — A Public MCP Server [pattern: MCP]",
+   "text": "What it does: Exposes a genuinely useful real-world tool to any AI assistant via the Model Context Protocol — the emerging standard for connecting agents to tools. Pick something you'd actually use (e.g. a wrapper over a public API that lacks a server).\nWhy it's golden: MCP is still rare enough on a resume to be a real edge, and it's central to how Anthropic's own FDEs connect Claude to enterprise systems. It's the cheapest project here for the signal it sends.\nMust do: 3–4 well-scoped tools (not 20 thin wrappers); real error handling with messages a model can act on; a deliberate choice of what NOT to expose; tests; a clear README; published to PyPI/npm and listed in an MCP directory.\nEvaluation / signal: Fewer, well-designed tools beat many shallow ones. Pair it with a short post explaining one design decision and why — that post demonstrates the exact judgment the role hires for.\nStack: Python or TypeScript MCP SDK, the target API, tests, published package.\nInterview probes: Why these tools and not others? How did you handle errors and auth? What would break if an agent called them in the wrong order?"
+  }
+ }
+}
